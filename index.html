@@ -1,15 +1,14 @@
 ---
 layout: default
 ---
-<h1>Hello jekyll</h1>
-<p>This is the index page</p>
-<p>My post list:</p>
+
 <ul class="post-list">
     {% for post in site.posts %}
       <li>
         <a href="{{site.baseurl}}{{post.url}}"> {{ post.title }}  </a> 
-        {{ post.date | date: "%F" }} <br>
-        {{ post.category }} <br>
+        <i>{{ post.author }}</i>
+        <span>{{ post.date | date: "%F" }}</span> 
+        <p>{{ post.category }} </p>
       </li>
     {% endfor %}
 </ul>
