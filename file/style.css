@@ -8,7 +8,7 @@ html, body {
   box-sizing:border-box;
 }
 header {
-    padding:60px 0 20px;
+    padding:60px 20% 40px;
     color: #fff;
     text-align: center;
     background-color: #159957;
@@ -59,9 +59,21 @@ header img{
     border-radius: 50%;
 } 
 header h1,header p{
-    margin-left: 20%;
+    /*margin-left: 20%;*/
     text-align: left;
     padding-left: 145px;
+}
+header a {
+    display: inline-block;
+    font-size: 8px;
+    color: #aff;
+    text-decoration: none;
+    border: solid 1px;
+    padding: 2px;
+    border-radius: 4px;
+    opacity: 0.65;
+    margin-left: 145px;
+    float: left;
 }
 .header {
     padding: 90px 0;
