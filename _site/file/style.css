@@ -8,7 +8,7 @@ html, body {
   box-sizing:border-box;
 }
 header {
-    padding:60px 0 20px;
+    padding:60px 20% 30px;
     color: #fff;
     text-align: center;
     background-color: #159957;
@@ -18,7 +18,7 @@ header {
 ul.post-list,article {
     list-style-type: none;
     width: 80%;
-    margin: 80px auto;
+    margin: 60px auto;
     max-width: 750px;
     text-align: left;
 }
@@ -43,6 +43,10 @@ ul.post-list,article {
     color: cornflowerblue;
     font-style: normal;
 }
+ul.post-list li {
+    padding: 20px 0;
+    border-bottom: 1px dashed #f0f0f0;
+}
 header img{
     height: 100px;
     border-radius: 50%;
@@ -55,9 +59,21 @@ header img{
     border-radius: 50%;
 } 
 header h1,header p{
-    margin-left: 20%;
+    /*margin-left: 20%;*/
     text-align: left;
     padding-left: 145px;
+}
+header a {
+    display: inline-block;
+    font-size: 8px;
+    color: #aff;
+    text-decoration: none;
+    border: solid 1px;
+    padding: 2px;
+    border-radius: 4px;
+    opacity: 0.65;
+    margin-left: 145px;
+    float: left;
 }
 .header {
     padding: 90px 0;
