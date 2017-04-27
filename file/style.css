@@ -22,7 +22,13 @@ ul.post-list,article {
     max-width: 750px;
     text-align: left;
 }
-
+.back-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: whitesmoke;
+    font-size: 12px;
+}
 .post-list>li>a {
     color: #222;
     font-size: 28px;
