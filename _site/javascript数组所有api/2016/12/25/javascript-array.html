@@ -1,0 +1,70 @@
+<html lang="zh">
+   <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+       <title>JavaScript数组所有API</title>
+       <link rel="stylesheet" type="text/css" href="https://yanlin0.github.io/blog/file/style.css">
+   </head>
+   <body>
+    <div class="header" >
+      <p>
+        <a class="back-icon" href="/index.html">&lt;&lt;Go back
+        </a>
+      </p>
+      <img src="https://yanlin0.github.io/blog/file/header.jpeg" alt="">
+      <h1>延琳笔记</h1>
+      <p>一个前端技术博客～～</p>
+    </div>
+    <article>
+      <h1>JavaScript数组所有API</h1>
+
+<hr>
+
+<h2>array构造器</h2>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">    var a = Array(8)
+
+    构建八位数组，效果等同new Array(8)
+
+    var a = [];a.length=8
+
+</code></pre></figure>
+<h2>构造函数方法</h2>
+
+<ul>
+<li><p>Array.of  </p>
+
+<p>将参数转化为数组  </p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  Array.of(8)     =&gt;[8]  
+  Array(8)        =&gt;[undefined*8]  
+  Array.of(8,5)   =&gt;[8,5]  
+  Array(8,5)      =&gt;[8,5]  
+  Array.of(&#39;8&#39;)   =&gt;[&#39;8&#39;]  
+  Array(&#39;8&#39;)      =&gt;[&#39;8&#39;]  
+</code></pre></figure></li>
+<li><p>Array.from<br>
+基于对象快速创建数组，有三个形参，obj,fn(加工函数),this  </p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  var obj = {0:&#39;a&#39;,1:&#39;b&#39;,2:&#39;c&#39;,length:3};  
+  Array.from(obj,function(value,index){  
+    console.log(value,index,this,arguments.length)  
+    return value.repeat(3)  
+  },obj)  
+</code></pre></figure></li>
+<li><p>Array.isArray</p></li>
+</ul>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">
+
+</code></pre></figure>
+<ul>
+<li></li>
+<li></li>
+</ul>
+
+<p>链接：<a href="https://github.com/yanlin0/blog">view in github</a><br>
+图片：<img src="https://github.com/yanlin0/blog" alt="view in github"></p>
+
+    </article>
+    
+    <!-- <footer>
+      <p>footer</p>
+    </footer> -->
+   </body>
+<html>
