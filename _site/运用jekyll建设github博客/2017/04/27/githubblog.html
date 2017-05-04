@@ -1,0 +1,67 @@
+<html lang="zh">
+   <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+       <title>jekyll建设github博客</title>
+       <link rel="stylesheet" type="text/css" href="https://yanlin0.github.io/blog/file/style.css">
+   </head>
+   <body>
+    <div class="header" >
+      <p>
+        <a class="back-icon" href="/index.html">&lt;&lt;Go back
+        </a>
+      </p>
+      <img src="https://yanlin0.github.io/blog/file/header.jpeg" alt="">
+      <h1>延琳笔记</h1>
+      <p>一个前端技术博客～～</p>
+    </div>
+    <article>
+      <h1>jekyll建设github博客</h1>
+
+<h2>环境</h2>
+
+<p>申请github账号，新建仓库，setting中选择发布为博客。</p>
+
+<p>本地同步远程仓库</p>
+
+<h3>本地安装jekyll</h3>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">    gem install jekyll 
+
+</code></pre></figure>
+<h2>建立目录和文件</h2>
+
+<p>├── _config.yml //配置文件</p>
+
+<p>├── _includes   //组件文件</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">        ├── footer.html
+
+        └── header.html
+</code></pre></figure>
+<p>├── _layouts   //模版文件</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">        ├── default.html
+
+        └── post.html
+</code></pre></figure>
+<p>├── _posts   //文章目录</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">        ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
+
+        └── 2009-04-26-barcamp-boston-4-roundup.textile
+</code></pre></figure>
+<p>├── _site   //其他文件</p>
+
+<p>└── index.html</p>
+
+<p>代码见本博客源码：<a href="https://github.com/yanlin0/blog">view in github</a></p>
+
+<h2>本地调试运行</h2>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  $ cd you website path //cd到你的网站目录下
+  $ jekyll serve
+  //一个开发服务器将会运行在 http://localhost:4000/
+  //你就能在本地服务器看到你用模板搭建的网站了
+</code></pre></figure>
+    </article>
+    
+    <!-- <footer>
+      <p>footer</p>
+    </footer> -->
+   </body>
+<html>

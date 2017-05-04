@@ -8,7 +8,7 @@ html, body {
   box-sizing:border-box;
 }
 header {
-    padding:60px 20% 50px;
+    padding:60px 20% 20px;
     color: #fff;
     text-align: center;
     background-color: #159957;
@@ -58,7 +58,7 @@ header img{
     border-radius: 50%;
     position: absolute;
     left: 20%;
-    top: 102px;
+    top: 98px;
 }
 .header img {
     height: 100px;
@@ -95,4 +95,7 @@ header a {
 }
 article{
       margin: 80px 300px!important;
+}
+figure {
+    border: 1px solid #eee!important;
 }

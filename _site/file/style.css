@@ -8,7 +8,7 @@ html, body {
   box-sizing:border-box;
 }
 header {
-    padding:60px 20% 30px;
+    padding:60px 20% 20px;
     color: #fff;
     text-align: center;
     background-color: #159957;
@@ -22,12 +22,12 @@ ul.post-list,article {
     max-width: 750px;
     text-align: left;
 }
-.back-icon {
+a.back-icon {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    color: whitesmoke;
+    top: 10px;
+    left: 10px;
     font-size: 12px;
+    color: #edf;
 }
 .post-list>li>a {
     color: #222;
@@ -58,7 +58,7 @@ header img{
     border-radius: 50%;
     position: absolute;
     left: 20%;
-    top: 112px;
+    top: 98px;
 }
 .header img {
     height: 100px;
@@ -80,6 +80,7 @@ header a {
     opacity: 0.65;
     margin-left: 145px;
     float: left;
+    margin-top:-5px;
 }
 .header {
     padding: 90px 0;
@@ -94,4 +95,7 @@ header a {
 }
 article{
       margin: 80px 300px!important;
+}
+figure {
+    border: 1px solid #eee!important;
 }

@@ -7,7 +7,7 @@ layout: default
       <li>
         <a href="{{site.baseurl}}{{post.url}}"> {{ post.title }}  </a> 
         <i>{{ post.author }}</i>
-        <span>{{ post.date | date: "%F" }}</span> 
+        <span>{{ post.writetime }}</span> 
         <p>{{ post.category }} </p>
       </li>
     {% endfor %}
