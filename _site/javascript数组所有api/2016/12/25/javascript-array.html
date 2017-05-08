@@ -27,7 +27,7 @@
     var a = [];a.length=8
 
 </code></pre></figure>
-<h2>构造函数方法</h2>
+<h3>构造函数方法</h3>
 
 <ul>
 <li><p>Array.of  </p>
@@ -47,19 +47,150 @@
     console.log(value,index,this,arguments.length)  
     return value.repeat(3)  
   },obj)  
+
+  function fn(){  
+    return Array.from(arguments);  
+  }  
+  fn(1, 2, 3); // [1, 2, 3]  
+
+  // String  
+  Array.from(&#39;abc&#39;);  
+  // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]  
+
+  // Set  
+  Array.from(new Set([&#39;abc&#39;, &#39;def&#39;]));   
+  // [&quot;abc&quot;, &quot;def&quot;]  
+
+  // Map  
+  Array.from(new Map([[1, &#39;abc&#39;], [2, &#39;def&#39;]]));   
+  // [[1, &#39;abc&#39;], [2, &#39;def&#39;]]  
+
 </code></pre></figure></li>
 <li><p>Array.isArray</p></li>
 </ul>
-<figure class="highlight"><pre><code class="language-text" data-lang="text">
+
+<p>常见的几种方法：</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">    var a = [];  
+    a instanceof Array;  
+    a.constructor ===Array;  
+    Object.prototype.toString.apply(a) ===&#39;[object Array]&#39;  
 
 </code></pre></figure>
+<p>ES6写法： Array.isArray([])  </p>
+
+<h2>数组原型方法</h2>
+
+<h3>改变自身值的方法（9）</h3>
+
 <ul>
-<li></li>
-<li></li>
+<li><p>栈入栈出</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  //栈顶：  
+  pop    //删除最后一个元素,并返回这个元素  
+    a.pop()  
+  push    //最后处插入一个元素  
+    a.push(&#39;str&#39;)  
+  //栈底：  
+  shift    //删除第一个元素,并返回这个元素  
+  unshift    //开始处插入一个元素  
+
+</code></pre></figure></li>
+<li><p>数组元素替换</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  //splice  
+    a.splice(from.to)  
+
+  //copyWithin  
+    a.copyWithin(target,from,to)  
+
+  //fill  
+    a.fill(value,from,to)  
+
+</code></pre></figure></li>
+<li><p>排序问题</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  //反转排列  
+  reverse  
+    a.reverse()  
+
+  //排序  
+  sort  
+    a.sort(comparefn)  
+
+</code></pre></figure></li>
 </ul>
 
-<p>链接：<a href="https://github.com/yanlin0/blog">view in github</a><br>
-图片：<img src="https://github.com/yanlin0/blog" alt="view in github"></p>
+<h3>不会改变自身值的方法（9）</h3>
+
+<ul>
+<li><p>合并</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  concat //合并并返回新数组  
+
+</code></pre></figure></li>
+<li><p>数组转字符串</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  //所有元素连接成一个字符串  
+  join  
+    a.join(&#39;+&#39;)  //缺省为&#39;,&#39;  
+
+  //转成字符串  
+  toString  
+  tolocaleString  
+
+</code></pre></figure></li>
+<li><p>浅复制</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  //复制数组中的第i个元素到第n个元素，但指向的依然是同一个对象  
+  slice  
+    a.slice(i,n)  
+
+</code></pre></figure></li>
+<li><p>数组查找</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  //找出对应元素的位置  
+  indexOf(&#39;&#39;,fromIndex)  
+  lastIndexOf(&#39;&#39;)  
+  //判断是否包含某元素  
+  includes(&#39;&#39;,fromIndex)  
+
+</code></pre></figure></li>
+</ul>
+
+<h3>遍历方法</h3>
+
+<ul>
+<li><p>forEach</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  a.forEach(function(c,i,a){  
+    a[i]=v*v  
+  },thisObj)  
+
+</code></pre></figure></li>
+<li><p>every
+使用传入函数＝》测试所有元素，all true == true;one false == false</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  var o = {0:10, 1:8, 2:25, length:3}  
+  var res = Array.prototype.every.call(o,function(v,i,o){  
+    return value &gt;= 8;  
+  },o)  
+  console.log(res)  //true  
+
+</code></pre></figure></li>
+<li><p>some
+使用传入函数＝》测试所有元素，one true == true;all false == false  </p></li>
+<li><p>filter</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">
+</code></pre></figure></li>
+<li><p>map</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">
+</code></pre></figure></li>
+<li><p>reduce</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">
+</code></pre></figure></li>
+<li><p>reduceRight</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">
+</code></pre></figure></li>
+<li><p>entries&amp;keys&amp;value</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">
+</code></pre></figure></li>
+<li><p>find&amp;findIndex</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">
+</code></pre></figure></li>
+</ul>
+
+<p>链接：<a href="https://github.com/yanlin0/blog">view in github</a>  </p>
 
     </article>
     
