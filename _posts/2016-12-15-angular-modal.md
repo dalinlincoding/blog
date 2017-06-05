@@ -1,6 +1,6 @@
 ---
 layout: post
-title: build your own angular之双向数据绑定
+title: build your own angular之双向数据绑定【未完...】
 category: angular的双向数据绑定原理及实现
 author: yanlin
 writetime: 2016-11-16

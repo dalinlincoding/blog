@@ -180,7 +180,8 @@ writetime: 2016-10-06
     ```
 
   * every
-    使用传入函数＝》测试所有元素，all true == true;one false == false
+    使用传入函数＝》测试所有元素，
+    判断规则：all true == true;one false == false
 
     ```
       var o = {0:10, 1:8, 2:25, length:3}  
@@ -192,7 +193,8 @@ writetime: 2016-10-06
     ```
 
   * some
-    使用传入函数＝》测试所有元素，one true == true;all false == false  
+    使用传入函数＝》测试所有元素，
+    判断规则：one true == true;all false == false  
 
   * filter
 
