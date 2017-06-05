@@ -1,0 +1,32 @@
+---
+layout: post
+title: build your own angular之双向数据绑定
+category: 
+author: yanlin
+writetime: 2016-11-16
+---
+# build your own angular之双向数据绑定
+
+***
+
+## 
+   
+
+   
+
+### 
+
+  ```
+    
+
+  ```
+
+  * 
+  * 
+
+
+链接：[view in github](https://github.com/yanlin0/blog)  
+图片：![view in github](https://github.com/yanlin0/blog)
+
+
+

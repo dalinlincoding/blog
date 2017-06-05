@@ -101,7 +101,7 @@ writetime: 2016-10-06
 
     ```
       //splice  
-        a.splice(from.to)  
+        a.splice(target,count,value)  
 
       //copyWithin  
         a.copyWithin(target,from,to)  
