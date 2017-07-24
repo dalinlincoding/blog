@@ -3,7 +3,7 @@ layout: default
 ---
 
 <ul class="post-list">
-    {% assign items = site.posts | sort: 'writetime' %}
+    {% assign items = site.posts | sort: 'writetime','last' %}
     {% for post in items %}
       <li>
         <a href="{{site.baseurl}}{{post.url}}"> {{ post.title }}  </a> 
