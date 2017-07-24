@@ -3,8 +3,8 @@ layout: default
 ---
 
 <ul class="post-list">
-    {% assign items = site.posts | sort: 'writetime','last' %}
-    {% for post in items %}
+    {% assign items = site.posts | sort: 'writetime' %}
+    {% for post in items reversed %}
       <li>
         <a href="{{site.baseurl}}{{post.url}}"> {{ post.title }}  </a> 
         <i>{{ post.author }}</i>
