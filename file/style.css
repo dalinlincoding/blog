@@ -99,3 +99,9 @@ article{
 figure {
     border: 1px solid #eee!important;
 }
+pre{
+    padding: 10px;
+    background: #f0f0f0;
+    margin-right: 30px;
+    border-radius: 3px;
+}
