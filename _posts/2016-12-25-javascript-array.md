@@ -34,7 +34,7 @@ writetime: 2016-10-06
       Array(8,5)      =>[8,5]  
       Array.of('8')   =>['8']  
       Array('8')      =>['8']  
-  ```
+    ```
 
   * Array.from  
     基于对象快速创建数组，有三个形参，obj,fn(加工函数),this  
