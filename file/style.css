@@ -104,4 +104,5 @@ pre{
     background: #f0f0f0;
     margin-right: 30px;
     border-radius: 3px;
+    overflow: scroll;
 }
