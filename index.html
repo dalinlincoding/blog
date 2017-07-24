@@ -3,7 +3,7 @@ layout: default
 ---
 
 <ul class="post-list">
-    {% for post in site.posts | sort: 'post.writetime','last' %}
+    {% for post in site.posts | sort: 'writetime' %}
       <li>
         <a href="{{site.baseurl}}{{post.url}}"> {{ post.title }}  </a> 
         <i>{{ post.author }}</i>
