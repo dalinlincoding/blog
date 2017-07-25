@@ -6,7 +6,7 @@ layout: default
     {% assign items = site.posts | sort: 'writetime' %}
     {% for post in items reversed %}
       <li>
-        <img src="file/{{post.img}}" alt="">
+        <img src="{{post.img}}" alt="">
         <a href="{{site.baseurl}}{{post.url}}"> {{ post.title }}  </a> 
         <i>{{ post.author }}</i>
         <span>{{ post.writetime }}</span> 
