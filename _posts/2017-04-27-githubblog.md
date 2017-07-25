@@ -4,6 +4,7 @@ title: jekyll建设github博客
 category: 运用jekyll建设github博客
 author: yanlin
 writetime: 2016-10-06
+img: file/header.jpeg
 ---
 # jekyll建设github博客
 ## 环境
