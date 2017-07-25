@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<button onclick="r()" style="width: 60px;display: block;margin-left: 40%;margin-bottom: 5px">刷新</button>
+<textarea id="in" style="width: 49%;height:90%;float: left;border:1px solid #f0f0f0;background:#f8f8f9 ;outline: 0">
+
+</textarea>
+<div id="out" style="width: 49%;height:90%;float: right;">
+
+</div>
+<script>
+    function r() {
+        console.log(document.getElementById('in'));
+        var x = document.getElementById('in').value;
+        document.getElementById('out').innerHTML = x
+    }
+
+</script>
+</body>
+
+</html>
