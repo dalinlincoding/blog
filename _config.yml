@@ -1,4 +1,4 @@
-url:"https://yanlin0.github.io/"
+url: "https://yanlin0.github.io/"
 markdown: redcarpet
 safe: false
 highlighter: true
