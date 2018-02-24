@@ -26,9 +26,11 @@
       // 处理event.alpha、event.beta及event.gamma
       console.log(event)
       line.innerHTML =  "<p>" + event.alpha + "</p><p>" + event.beta + "</p><p>" + event.gamma
-      var speed = event.beta/3
+      var speedb = event.beta/3
+      var speedg = event.gamma/3
       setInterval(function(){
-        target.left = target.left + speed + "px"
+        target.style.left = String(target.style.left).substring(0,target.style.left.length-2) + speedb + "px"
+        target.style.top = String(target.style.top).substring(0,target.style.top.length-2) + speedg + "px"
       },100)
     }, true);
   }
