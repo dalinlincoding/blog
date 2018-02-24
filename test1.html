@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>test</title>
+  <style type="text/css" media="screen">
+    .target {
+      height: 30px;width: 30px;border-radius: 15px;background-color: red;
+      top:100px;left:100px;
+    }
+    #line {
+      position: fixed;bottom:0px;
+      left:0px;
+    }
+  </style>
+</head>
+<body onload="run()">
+  <div class="target">
+    
+  </div>
+  <div id="line"></div>
+  <script>
+  function run(){
+    var line = document.getElementById('line')
+    window.addEventListener("deviceorientation", function(event) {
+
+      // 处理event.alpha、event.beta及event.gamma
+      console.log(event)
+      line.innerHTML =  "a=" + event.alpaha + "b=" + event.beta + "c=" + event.gamma
+
+    }, true);
+  }
+  </script>
+</body>
+</html>
