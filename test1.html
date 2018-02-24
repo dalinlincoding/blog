@@ -2,7 +2,7 @@
 <head>
   <title>test</title>
   <style type="text/css" media="screen">
-    .target {
+    #id {
       height: 30px;width: 30px;border-radius: 15px;background-color: red;
       top:100px;left:100px;
     }
@@ -13,19 +13,21 @@
   </style>
 </head>
 <body onload="run()">
-  <div class="target">
+  <div id="target">
     
   </div>
   <div id="line"></div>
   <script>
   function run(){
     var line = document.getElementById('line')
+    var target = document.getElementById('target')
     window.addEventListener("deviceorientation", function(event) {
 
       // 处理event.alpha、event.beta及event.gamma
       console.log(event)
       line.innerHTML =  "<p>" + event.alpha + "</p><p>" + event.beta + "</p><p>" + event.gamma
-
+      var speed = event.beta/3
+        target.left = target.left + speed + "px"
     }, true);
   }
   </script>
