@@ -27,7 +27,9 @@
       console.log(event)
       line.innerHTML =  "<p>" + event.alpha + "</p><p>" + event.beta + "</p><p>" + event.gamma
       var speed = event.beta/3
+      setInterval(function(){
         target.left = target.left + speed + "px"
+      },100)
     }, true);
   }
   </script>
