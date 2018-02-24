@@ -30,8 +30,8 @@
       var speedb = Math.round(event.beta/3)
       var speedg = Math.round(event.gamma/3)
       setInterval(function(){
-        target.style.left = String(target.style.left).substring(0,target.style.left.length-2) + speedb + "px"
-        target.style.top = String(target.style.top).substring(0,target.style.top.length-2) + speedg + "px"
+        target.style.left = Math.round(String(target.style.left).substring(0,target.style.left.length-2)) + speedb + "px"
+        target.style.top = Math.round(String(target.style.top).substring(0,target.style.top.length-2)) + speedg + "px"
 
       line.innerHTML =  "<p>" + target.style.left + "</p><p>" +  "<p>" + target.style.top + "</p><p>" + event.beta + "</p><p>" + event.gamma
       },100)
