@@ -22,21 +22,17 @@
   function run(){
     var line = document.getElementById('line')
     var target = document.getElementById('target')
-    var speedb = 0,speedg=0
+    var speedb=0,speedg=0
     window.addEventListener("deviceorientation", function(event) {
-
       // 处理event.alpha、event.beta及event.gamma
-      console.log(event)
-      line.innerHTML =  "<p>" + event.alpha + "</p><p>" + event.beta + "</p><p>" + event.gamma
-      speedb = Math.round(event.beta/10)
-      speedg = Math.round(event.gamma/10)
+      speedb = speedb ? Math.round((speedb+Math.round(event.beta/3))/2) : Math.round(event.beta/3)
+      speedg = speedg ? Math.round((speedg+Math.round(event.beta/3))/2) : Math.round(event.gamma/3)
     }, true);
-    
       setInterval(function(){
         target.style.left = Math.round(String(target.style.left).substring(0,target.style.left.length-2)) + speedb + "px"
-        target.style.top = Math.round(String(target.style.top).substring(0,target.style.top.length-2)) + speedg + "px"
+        target.style.top = Math.round(String(target.style.top).substring(0,target.style.top.length-2)) - speedg + "px"
 
-      line.innerHTML =  "<p>" + target.style.left + "</p><p>" +  "<p>" + target.style.top + "</p><p>" + speedb + "</p><p>" + speedg
+      line.innerHTML =  "<p>" + target.style.left + "</p><p>" +  "<p>" + target.style.top + "</p><p>" + event.beta + "</p><p>" + event.gamma
       },100)
   }
   </script>
