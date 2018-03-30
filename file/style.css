@@ -106,3 +106,7 @@ pre{
     border-radius: 3px;
     overflow: scroll;
 }
+
+ul li img{
+    width:20px
+}

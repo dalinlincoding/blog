@@ -1,0 +1,66 @@
+<html lang="zh">
+   <head>
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+       <title>造轮子系列之虚拟DOM原理探索及实现</title>
+       <link rel="stylesheet" type="text/css" href="https://yanlin0.github.io/blog/file/style.css">
+   </head>
+   <body>
+    <div class="header" >
+      <p>
+        <a class="back-icon" href="/index.html">&lt;&lt;Go back
+        </a>
+      </p>
+      <img src="https://yanlin0.github.io/blog/file/header.jpeg" alt="">
+      <h1>延琳笔记</h1>
+      <p>一个前端技术博客～～</p>
+    </div>
+    <article>
+      <h1>[造轮子系列]之虚拟DOM原理探索及实现</h1>
+
+<hr>
+
+<h2>WHY-为什么需要提出虚拟DOM的概念</h2>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">js并不会或者很少会导致前端性能问题，前端性能瓶颈大多数是由于频繁的DOM操作导致的。为了减少和优化DOM操作，如今有多种前端框架（如vue，react等）实现了虚拟DOM。
+</code></pre></figure>
+<h3>DOM操作为何会引起前端性能问题。</h3>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">
+
+</code></pre></figure>
+<ul>
+<li></li>
+<li></li>
+</ul>
+
+<h2>WHAT-什么是虚拟DOM</h2>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">在JavaScript中，可以很方便的使用JS对象实现DOM对应的结构，那么当DOM发生改变时，很容易知道那些内容发生了改变，然后去刷新对应的真实DOM，避免粗放式的DOM操作。
+</code></pre></figure>
+<h2>HOW-如何实现虚拟DOM</h2>
+
+<p>### 通过JS对象表示虚拟DOM</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">    var vDOM = {
+      oldV,
+      newV,
+      index,
+      [{
+        oldV,
+        newV,
+        index,
+        []
+      },{
+
+      }]
+    }
+
+</code></pre></figure>
+<p>### 如何检测DOM变化</p>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">* 深度遍历法则
+
+* 同级比较规则
+</code></pre></figure>
+    </article>
+    
+    <!-- <footer>
+      <p>footer</p>
+    </footer> -->
+   </body>
+<html>

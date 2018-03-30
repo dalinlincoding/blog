@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<button onclick="r()" style="width: 60px;display: block;margin-left: 40%;margin-bottom: 5px">刷新</button>
+<div style="float: left;width: 45%;height: 95%">
+    <textarea id="in" style="width:100%;height:40%;border:1px solid #f0f0f0;background:#f8f8f9 ;outline: 0">
+
+    </textarea>
+    <textarea id="s" style="width:100%;height:55%;border:1px solid #f0f0f0;background:#f8f8f9 ;outline: 0">
+
+    </textarea>
+</div>
+
+<div id="out" style="width: 52%;height:95%;float: right;">
+
+</div>
+<script>
+    function r() {
+        var x = document.getElementById('in').value;
+        var s = document.getElementById('s').value;
+        document.getElementById('out').innerHTML = x
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.innerHTML=s
+        head.appendChild(script);
+    }
+
+</script>
+</body>
+
+</html>
