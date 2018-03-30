@@ -5,7 +5,7 @@
        <link rel="stylesheet" type="text/css" href="https://yanlin0.github.io/blog/file/style.css">
    </head>
    <body>
-    <div class="header" >
+    <div class="sidebar" >
       <p>
         <a class="back-icon" href="/index.html">&lt;&lt;Go back
         </a>
@@ -27,7 +27,7 @@
 <figure class="highlight"><pre><code class="language-text" data-lang="text">    gem install jekyll 
 
 </code></pre></figure>
-<p>如果出现&quot;It looks like you don&#39;t have redcarpet&quot;这个错误，则用gem install redcarpet</p>
+<p>如果出现&quot;It looks like you don&#39;t have redcarpet&quot;这个错误，则执行gem install redcarpet</p>
 
 <h2>建立目录和文件</h2>
 
@@ -51,6 +51,138 @@
 <p>├── _site   //其他文件</p>
 
 <p>└── index.html</p>
+
+<h2>编写侧边栏</h2>
+
+<h3>首页</h3>
+
+<p>在_layouts目录中，有html文件，用对应的html文件来定义页面的侧边栏
+如default文件是用来定义主页的，在这个文件里<h1>React生命周期</h1></p>
+
+<ul>
+<li><p>Mounting创建：  </p>
+
+<p>getInitState：属性初始化值  </p></li>
+<li><p>componentWillMount：组建将要加载  </p>
+
+<p>Render：将jsx结构渲染到页面  </p></li>
+<li><p>componentDidMount：jsx组件渲染成功  </p></li>
+<li><p>updating：更新  </p>
+
+<p>componentWillReceiveProps: 父组件将改变  </p>
+
+<p>shouldComponentUpdate:将要更新  </p>
+
+<p>componentWillUpdate:父组建将更新  </p>
+
+<p>componentdidUpdate:更新完成  </p></li>
+<li><p>unmounting：销毁  </p>
+
+<p>componentwillunmout  </p></li>
+</ul>
+
+<p>代表index.html
+而我自定义了一个header。
+```$xslt
+<body>
+    <header>
+      <h1>大琳惏coding</h1>
+      <p>icoding爱生活～～</p>
+      <a href="#">view in github</a>
+      <img src="/file/header.jpeg" alt="">
+    </header>
+    <h1>React生命周期</h1></p>
+
+<ul>
+<li><p>Mounting创建：  </p>
+
+<p>getInitState：属性初始化值  </p></li>
+<li><p>componentWillMount：组建将要加载  </p>
+
+<p>Render：将jsx结构渲染到页面  </p></li>
+<li><p>componentDidMount：jsx组件渲染成功  </p></li>
+<li><p>updating：更新  </p>
+
+<p>componentWillReceiveProps: 父组件将改变  </p>
+
+<p>shouldComponentUpdate:将要更新  </p>
+
+<p>componentWillUpdate:父组建将更新  </p>
+
+<p>componentdidUpdate:更新完成  </p></li>
+<li><p>unmounting：销毁  </p>
+
+<p>componentwillunmout  </p></li>
+</ul>
+
+<p></body>
+```</p>
+
+<h3>文章页</h3>
+
+<p>post文件是用来定义文章页的，这里<h1>React生命周期</h1></p>
+
+<ul>
+<li><p>Mounting创建：  </p>
+
+<p>getInitState：属性初始化值  </p></li>
+<li><p>componentWillMount：组建将要加载  </p>
+
+<p>Render：将jsx结构渲染到页面  </p></li>
+<li><p>componentDidMount：jsx组件渲染成功  </p></li>
+<li><p>updating：更新  </p>
+
+<p>componentWillReceiveProps: 父组件将改变  </p>
+
+<p>shouldComponentUpdate:将要更新  </p>
+
+<p>componentWillUpdate:父组建将更新  </p>
+
+<p>componentdidUpdate:更新完成  </p></li>
+<li><p>unmounting：销毁  </p>
+
+<p>componentwillunmout  </p></li>
+</ul>
+
+<p>代表_posts中文件的内容
+而我这里自定义了一个侧边栏。
+```$xslt
+<div class="sidebar" >
+    <p>
+        <a class="back-icon" href="/index.html">&lt;&lt;Go back
+        </a>
+    </p>
+        <img src="https://yanlin0.github.io/blog/file/header.jpeg" alt="">
+        <h1>大琳惏coding</h1>
+    <p>icoding爱生活</p>
+</div>
+<article>
+    <h1>React生命周期</h1></p>
+
+<ul>
+<li><p>Mounting创建：  </p>
+
+<p>getInitState：属性初始化值  </p></li>
+<li><p>componentWillMount：组建将要加载  </p>
+
+<p>Render：将jsx结构渲染到页面  </p></li>
+<li><p>componentDidMount：jsx组件渲染成功  </p></li>
+<li><p>updating：更新  </p>
+
+<p>componentWillReceiveProps: 父组件将改变  </p>
+
+<p>shouldComponentUpdate:将要更新  </p>
+
+<p>componentWillUpdate:父组建将更新  </p>
+
+<p>componentdidUpdate:更新完成  </p></li>
+<li><p>unmounting：销毁  </p>
+
+<p>componentwillunmout  </p></li>
+</ul>
+
+<p></article>
+```</p>
 
 <p>代码见本博客源码：<a href="https://github.com/yanlin0/blog">view in github</a></p>
 
