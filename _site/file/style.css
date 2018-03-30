@@ -99,3 +99,6 @@ article{
 figure {
     border: 1px solid #eee!important;
 }
+ul li img{
+    width:20px
+}
