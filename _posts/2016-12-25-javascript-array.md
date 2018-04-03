@@ -2,7 +2,7 @@
 layout: post
 title: JavaScript数组所有API
 category: JavaScript数组所有API
-author: yanlin
+author: DaLinlin
 writetime: 2016-10-06
 ---
 # JavaScript数组所有API

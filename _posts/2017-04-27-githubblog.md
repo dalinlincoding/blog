@@ -2,7 +2,7 @@
 layout: post
 title: jekyll建设github博客
 category: 运用jekyll建设github博客
-author: yanlin
+author: DaLinlin
 writetime: 2016-10-06
 img: file/header.jpeg
 ---
@@ -49,7 +49,9 @@ img: file/header.jpeg
 ##编写侧边栏
 ###首页
 在_layouts目录中，有html文件，用对应的html文件来定义页面的侧边栏
+
 如default文件是用来定义主页的，在这个文件里{{content}}代表index.html
+
 而我自定义了一个header。
 ```$xslt
 <body>
@@ -64,6 +66,7 @@ img: file/header.jpeg
 ```
 ###文章页
 post文件是用来定义文章页的，这里{{content}}代表_posts中文件的内容
+
 而我这里自定义了一个侧边栏。
 ```$xslt
 <div class="sidebar" >
@@ -80,6 +83,48 @@ post文件是用来定义文章页的，这里{{content}}代表_posts中文件�
 </article>
 ```
 
+##编写内容
+###首页
+首页内容在根目录的index.html中
+
+语法比较简单：
+
+1.在`{ % *** % }`中写一些逻辑语句
+
+如下，我写的就是posts时间倒序循环
+
+2.post的参数写在md文件的layout中
+```$xslt
+<ul class="post-list">
+    { % assign items = paginator.posts | sort: 'writetime' % }
+    { % for post in items reversed % }
+      <li>
+          <div>
+              { % if post.img % }
+              <img src="{{post.img}}" alt="">
+              { % endif % }
+              <a href="{{site.baseurl}}{{post.url}}"> {{ post.title }}  </a>
+              <div>
+                  <i class="name">{{ post.writetime }}</i>
+              </div>
+          </div>
+            <p>{{ post.category }} </p>
+      </li>
+    { % endfor % }
+</ul>
+```
+##设置分页
+在_config.yml中增加如下配置，记得执行gem install jekyll-paginate安装插件
+```$xslt
+    plugins: [jekyll-paginate]
+    paginate: 5
+    paginate_path: "page:num"
+```
+
+##编写文章页
+文章页放在_posts中是md文件，可以去看一下md的语法
+
+最终页面时将md文件编译成的html，在检查器中查看各个元素的编译结果，修改对应css，就可以改变文章的样式
 
 代码见本博客源码：[view in github](https://github.com/yanlin0/blog)
 
