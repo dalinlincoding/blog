@@ -18,8 +18,9 @@ img: file/header.jpeg
     gem install jekyll 
 
   ```
+  
   如果出现"It looks like you don't have redcarpet"这个错误，则执行gem install redcarpet
-
+  
 
 ##建立目录和文件
 
