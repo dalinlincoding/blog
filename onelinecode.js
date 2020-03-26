@@ -1,4 +1,4 @@
-document.body.innerHTML='<canvas id="board" width="600px" height="600px" onmousemove = "boardmousemove(event)" onmouseout = "boardmouseout(event)" onmouseup = "boardmouseup(event)" ></canvas>'+
+document.body.innerHTML+='<canvas id="board" width="600px" height="600px" onmousedown = "boardmousedown()" onmousemove = "boardmousemove(event)" onmouseout = "boardmouseout(event)" onmouseup = "boardmouseup(event)" ></canvas>'+
         '<div class="btn">'+
             '<input type="color" class="color" onchange="colorchange()">'+
             '<input type="button" value="清屏" class="clear" onclick="clearclick()">'+
@@ -27,14 +27,14 @@ var img = []; //用于存放画布图片截图的数组
 // draw();
 ctx.lineCap = "round"; //设置线条的结束端点样式
 ctx.lineJion = "round"; //设置两条线相交时，所创建的拐角类型
-$(".board").mousedown(function(e) {
+function boardmousedown(e) {
     bool = true;
     ctx.beginPath(); //起始/重置一条路径
     ctx.moveTo(e.clientX - left, e.clientY - top); //把路径移动到画布中的指定点，不创建线条
     var pic = ctx.getImageData(0, 0, canvasW, canvasH); //获取当前画布的图像
     img.push(pic); //将当前图像存入数组
     // ctx.moveTo(e.clientX, e.clientY);
-})
+}
 function boardmousemove(e) {
     console.log(bool);
     if (bool) {
