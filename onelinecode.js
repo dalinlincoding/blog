@@ -4,7 +4,7 @@ document.body.innerHTML+='<canvas id="board" width="600px" height="600px" onmous
             '<input type="button" value="清屏" class="clear" onclick="clearclick()">'+
             '<input type="button" value="撤销" class="reset" onclick="resetclick()">'+
             '<input type="button" value="橡皮" class="eraser" onclick="eraserclick()">'+
-        '</div>'+
+        '</div><style>'+
 ' .board {width: 600px;height: 300px;border: 2px solid yellowgreen;border-radius: 10px;box-shadow: 2px 0px 5px #666;margin: 10px 0 0 10px;cursor: pointer;}'+
 ' .btn {width: 610px;height: 35px;margin: 10px 0 0px 10px;position: relative;}'+
 ' .btn input {border: none;outline: none;width: 100px;height: 35px;vertical-align: middle;margin-right: 10px;border-radius: 10px;background-color: chartreuse;}'+
@@ -12,7 +12,7 @@ document.body.innerHTML+='<canvas id="board" width="600px" height="600px" onmous
 ' .btn input[type="color"]::-webkit-color-swatch {border: 3px solid chartreuse;border-radius: 10px;}'+
 ' .btn input[type="range"] {padding: 0 5px;-webkit-appearance: none;background-color: chartreuse;}'+
 ' .btn input[type="range"]::-webkit-slider-thumb {-webkit-appearance: none;width: 10px;height: 10px;background-color: #fff;border-radius: 50%;margin-top: -4px;}'+
-' .btn input[type="range"]::-webkit-slider-runnable-track {width: 90px;height: 2px;background-color: #666;}'
+' .btn input[type="range"]::-webkit-slider-runnable-track {width: 90px;height: 2px;background-color: #666;}</style>'
 
 var $board = document.getElementById('board'); //jquery对象与dom对象转换
 var ctx = $board.getContext("2d"); //创建画布对象
