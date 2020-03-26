@@ -28,6 +28,7 @@ var img = []; //用于存放画布图片截图的数组
 ctx.lineCap = "round"; //设置线条的结束端点样式
 ctx.lineJion = "round"; //设置两条线相交时，所创建的拐角类型
 function boardmousedown(e) {
+        console.log(111)
     bool = true;
     ctx.beginPath(); //起始/重置一条路径
     ctx.moveTo(e.clientX - left, e.clientY - top); //把路径移动到画布中的指定点，不创建线条
