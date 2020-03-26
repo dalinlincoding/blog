@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>迷宫</title>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<style type="text/css" media="screen">
+   
+     .board {
+        width: 600px;
+        height: 600px;
+        position: absolute;
+    }
+     .btn {
+        width: 610px;
+        height: 35px;
+        top: 0;
+        position: fixed;
+    }
+     .btn input {
+        border: none;
+        outline: none;
+        width: 80px;
+        height: 35px;
+        vertical-align: middle;
+        margin-right: 10px;
+        border-radius: 10px;
+        background-color: chartreuse;
+    }
+    /* input type = color时，设置拾色器的外层包括的边框带样式*/
+     .btn input[type="color"]::-webkit-color-swatch-wrapper {
+        padding: 0px;
+    }
+    /* input type = color 设置拾色器内层边框样式*/
+     .btn input[type="color"]::-webkit-color-swatch {
+        border: 3px solid chartreuse;
+        border-radius: 10px;
+    }
+     .btn input[type="range"] {
+        padding: 0 5px;
+        /* 消除默认样式 */
+        -webkit-appearance: none;
+        background-color: chartreuse;
+    }
+    /* 设置 活动轨道的样式*/
+     .btn input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        border-radius: 50%;
+        margin-top: -4px;
+    }
+    /* 设置滑动小圆点的样式 */
+     .btn input[type="range"]::-webkit-slider-runnable-track {
+        width: 90px;
+        height: 2px;
+        background-color: #666;
+    }
+    body{
+      display: block;width: 600px;margin: 60px auto;min-height: 600px;height: 600px;word-break: break-word;font-size: 66px;letter-spacing: -10px;line-height: 60px;overflow: hidden;border: 5px solid red;padding: 46px 0px;color: red;    user-select: none;
+    }
+</style>
+</head>
+<body>
+        <canvas class="board" width="600px" height="600px"></canvas>
+        <div class="btn">
+            <input type="button" value="生成迷宫" class="gener">
+            <input type="color" class="color">
+            <input type="button" value="清屏" class="clear">
+            <input type="button" value="撤销" class="reset">
+            <input type="button" value="橡皮" class="eraser">
+            <input type="range" class="range" min="2" max="20" value="5">
+        </div>
+        <div id="content">
+          
+        </div>
+<script type="text/javascript" charset="utf-8" >
+  
+    
+    var $board = $(".board")[0]; //jquery对象与dom对象转换
+    var ctx = $board.getContext("2d"); //创建画布对象
+    var bool = false;
+    var left = $board.offsetLeft; //获取画布的left值
+    var toph = $board.offsetTop; //获取画布的top值
+    var canvasW = $(".board").width(); //获取画布的宽度
+    var canvasH = $(".board").height(); //获取画布的高度
+    var img = []; //用于存放画布图片截图的数组
+ console.log(left,toph,canvasW)
+ 
+window.onload = function() {
+    // draw();
+    ctx.lineCap = "round"; //设置线条的结束端点样式
+    ctx.lineJion = "round"; //设置两条线相交时，所创建的拐角类型
+    $(".board").mousedown(function(e) {
+        bool = true;
+        ctx.beginPath(); //起始/重置一条路径
+        console.log(e.clientX - left, e.clientY-toph)
+        ctx.moveTo(e.clientX - left, e.clientY - toph); //把路径移动到画布中的指定点，不创建线条
+        var pic = ctx.getImageData(0, 0, canvasW, canvasH); //获取当前画布的图像
+        img.push(pic); //将当前图像存入数组
+        // ctx.moveTo(e.clientX, e.clientY);
+    })
+    $(".board").mousemove(function(e) {
+        // console.log(bool);
+        if (bool) {
+        console.log(1111,e.clientX , e.clientY)
+        console.log(2222,e.clientX-left , e.clientY-toph)
+            // ctx.lineTo(e.clientX, e.clientY);
+            ctx.lineTo(e.clientX - left-2, e.clientY - toph-2); //添加一个新点，在画布中创建从该点到最后指定点的线条
+            ctx.stroke();
+        }
+    });
+    $(".board").mouseout(function(e) {
+        ctx.closePath(); //当鼠标移出画布区域时,创建从当前点回到起始点的路径
+        bool = false;
+    })
+    $(".board").mouseup(function(e) {
+ 
+        ctx.closePath(); //当鼠标抬起时,创建从当前点回到起始点的路径
+        bool = false;
+    })
+    $(".clear").click(function() {
+        ctx.clearRect(0, 0, canvasW, canvasH); //创建一个等大画布覆盖
+    });
+    $(".reset").click(function() {
+        if (img.length > -1) {
+            ctx.putImageData(img.pop(), 0, 0); //删除图像数组最后一位
+        }
+    })
+    $(".eraser").click(function() {
+        ctx.strokeStyle = "#fff";
+    });
+    $(".gener").click(function() {
+      document.getElementById('content').innerHTML=''
+        for(var i =0;i<260;i++){
+          document.getElementById('content').innerHTML += ['\\','\/'][Math.floor(Math.random() * 2)]
+        };
+    });
+    $(".color").change(function() {
+        ctx.strokeStyle = this.value; //改变颜色
+    });
+    $(".range").change(function() {
+        ctx.lineWidth = this.value; //改变线条粗细
+    })
+}
+</script>
+</body>
+</html>
