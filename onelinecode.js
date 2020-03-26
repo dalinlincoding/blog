@@ -17,10 +17,10 @@ document.body.innerHTML+='<canvas id="board" width="600px" height="600px" onmous
 var $board = document.getElementById('board'); //jquery对象与dom对象转换
 var ctx = $board.getContext("2d"); //创建画布对象
 var bool = false;
-var left = $board.offset().left; //获取画布的left值
-var top = $board.offset().top; //获取画布的top值
-var canvasW = $board.width(); //获取画布的宽度
-var canvasH = $board.height(); //获取画布的高度
+var left = $board.offsetLeft; //获取画布的left值
+var top = $board.offsetTop; //获取画布的top值
+var canvasW = $board.offsetWidth; //获取画布的宽度
+var canvasH = $board.offsetHeight; //获取画布的高度
 var img = []; //用于存放画布图片截图的数组
  
 
